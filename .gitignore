@@ -1,9 +1,4 @@
-.vagrant/
-client/node_modules
-client/dist
-client/tmp
-client/rpms
-
-server/node_modules
-server/dist
-server/rpms
+node_modules
+dist
+tmp
+rpms

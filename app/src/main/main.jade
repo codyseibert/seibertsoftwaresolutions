@@ -5,20 +5,28 @@ section.header
       .col-md-6
         span.logo Seibert Software Solutions, LLC
       .col.md-6.navigation
-        .link.selected Home
-        .link Team
-        .link Portfolio
-        .link Contact
-        .link Blog
+        .link
+          a(du-smooth-scroll="home") Home
+        .link 
+          a(du-smooth-scroll="team") Team
+        .link 
+          a(du-smooth-scroll="portfolio") Portfolio
+        .link 
+          a(du-smooth-scroll="contact") Contact
+        .link 
+          a(href="http://codyseibert.com", target="_blank") Blog
 
-section.banner
+section.banner#home
   .container
     .row
       .col-md-7
         .main
           h1 Seibert Software Solutions, LLC
         .slogan
-          h2 We Specialize in Web Apps
+          h2 We 
+            b Specialize 
+            | in 
+            span Web Apps
         .info
           h3 Building a web app doesn't have to be hard.  Present to us your idea, and our team will make it come to fruition. 
             br
@@ -79,7 +87,7 @@ section.catch
               b understand
             |  the feedback your company gives.  A day with no results means a day off course.
             
-section.team
+section.team#team
   .container
     .row 
       .col-md-12.center
@@ -100,11 +108,11 @@ section.team
           a(href="http://flexion.us/", target="_blank") Flexion 
           | building a microservice architecture.  Additionally, he works on various projects outside of the 9-5.  He currently lives in Chattanooga, TN
       .col-md-2.icons
-        i.fa.fa-linkedin
-        i.fa.fa-home
-        i.fa.fa-envelope
-        i.fa.fa-facebook
-        i.fa.fa-twitter
+        //- i.fa.fa-linkedin
+        //- i.fa.fa-home
+        //- i.fa.fa-envelope
+        //- i.fa.fa-facebook
+        //- i.fa.fa-twitter
       
     hr 
     
@@ -126,11 +134,11 @@ section.team
       .col-md-4
         .portrait.payden
       .col-md-2.icons
-        i.fa.fa-linkedin
-        i.fa.fa-home
-        i.fa.fa-envelope
-        i.fa.fa-facebook
-        i.fa.fa-twitter
+        //- i.fa.fa-linkedin
+        //- i.fa.fa-home
+        //- i.fa.fa-envelope
+        //- i.fa.fa-facebook
+        //- i.fa.fa-twitter
         
     hr
     
@@ -147,31 +155,27 @@ section.team
           a(href="http://humanaut.is/", target="_blank") Humanaut, LLC 
           | as a full time designer and developer, and it living in Chattanooga, TN.
       .col-md-2.icons
-        i.fa.fa-linkedin
-        i.fa.fa-home
-        i.fa.fa-envelope
-        i.fa.fa-facebook
-        i.fa.fa-twitter
+        //- i.fa.fa-linkedin
+        //- i.fa.fa-home
+        //- i.fa.fa-envelope
+        //- i.fa.fa-facebook
+        //- i.fa.fa-twitter
         
         
-section.portfolio
+section.portfolio#portfolio
   .container
     .row
       .col-md-12.center
-        h2.title Check out our Projects
+        h2.title Our Portfolio
         
         hr
         
-        .col-md-2.right
-          .link MyDogLacy
-          .link Setter
-          .link Typr
-        .col-md-5.left
+        .col-md-6.left
           h2.name My Dog Lacy
           h3 About
           .about 
-            a(href="https://mydoglacy.com", target="_blank") MyDogLacy.com 
-            | is a web app designed to assist pet lovers around the world in creating their very own page for a recently deceased pet.
+            a(href="http://mydoglacy.com", target="_blank") MyDogLacy.com 
+            | is a web app designed to assist pet lovers around the world in creating their very own page for a recently deceased pet.  We designed and implemented this site for ourselves to help us obtain a better grasp on using the Strip API and fortify out ability to work as a team.
           h3 Technology Stack
           .stack
             ul
@@ -183,17 +187,83 @@ section.portfolio
               li Express.js
               li MongoDB
             
-        .col-md-5
+        .col-md-6
           img(
             src="assets/images/grayhound.jpg"
           )
-        
-section.contact
+    hr
+    .row
+      .col-md-12.center
+        .col-md-6.left
+          h2.name Real Morning Report
+          h3 About
+          .about 
+            | Our involvement with 
+            a(href="https://realmorningreport.com", target="_blank") RealMorningReport.com 
+            | included designing the backend data models used for storing the user responses and mailing information into an encrypted database.  We helped debug various issues on the front end, integrated with google recaptcha, and integrated with the YesMail Mailing Service API.  Additionally, we consulted with the in house developers of Humanaut and Organic Valley to give advice on security measures and proper code practices.  Since this project has been wrapped up, we are now helping maintain the servers.
+          h3 Technology Stack
+          .stack
+            ul
+              li Amazon Web Services
+              li Angular.js
+              li Node.js
+              li Express.js
+              li MariaDB
+              li Sequelize
+            
+        .col-md-6
+          img(
+            src="assets/images/realmorningreport.png"
+          )
+          img(
+            src="assets/images/realmorningreportquestion.png"
+          )
+          
+    hr
+    .row
+      .col-md-12.center
+        .col-md-6.left
+          h2.name Setter
+          h3 About
+          .about 
+            | Since Cody and Guillermo are rock climbers, they created 
+            a(href="http://setter.rocks", target="_blank") Setter.rocks 
+            | for one of their home climbing gyms in Orlando, FL.  The idea behind Setter is to allow facilitate climbing gyms in managing their climbing routes and allowing them to obtain feedback from their members.
+          h3 Technology Stack
+          .stack
+            ul
+              li DigitalOcean
+              li Angular.js
+              li Node.js
+              li Express.js
+              li MySQL
+            
+        .col-md-6
+          img(
+            src="assets/images/settermain.png"
+          )
+          img(
+            src="assets/images/settersocial.png"
+          )
+      
+section.contact#contact
   .container
     .row
       .col-md-12.center
         h2 Contact Us Now!
         hr.dark
+        h3 Feel free to send us an email at
+        br
+        br
+        h3.mail cseibert113@gmail.com
+        br
+        br
+        h3 or
+        br
+        br
+        h3 send us a message:
+        br
+        br
         
         form.left.col-md-8.col-md-push-2
           .row
