@@ -1,0 +1,18 @@
+[Service]
+WorkingDirectory=/home/mydoglacy
+ExecStart=/usr/bin/pm2 start server.js --name mydoglacy -i 1 -x -e /var/log/mydoglacy/error.log -o /var/log/mydoglacy/app.log --merge-logs --no-daemon
+ExecStop=/usr/bin/pm2 stop mydoglacy
+ExecReload=/usr/bin/pm2 restart mydoglacy
+Type=simple
+RemainAfterExit=false
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=mydoglacy
+User=node
+Group=node
+Environment='NODE_ENV=production'
+Environment='PATH=$PATH:/usr/bin'
+
+[Install]
+WantedBy=multi-user.target

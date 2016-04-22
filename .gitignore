@@ -1,0 +1,9 @@
+.vagrant/
+client/node_modules
+client/dist
+client/tmp
+client/rpms
+
+server/node_modules
+server/dist
+server/rpms

@@ -1,0 +1,242 @@
+h1
+  font-size: 50px
+  font-weight: bold
+  text-shadow: 3px 3px $secondary-color
+
+
+section.header
+  height: 80px
+  padding-top: 20px
+  background-color: white
+  box-shadow: 5px 5px 10px $primary-color
+  color: $accent-color
+
+  .logo
+    font-size: 30px
+
+  .navigation
+    text-align: right
+
+    .link
+      display: inline-block
+      font-size: 26px
+      margin-right: 30px
+      cursor: pointer
+      // font-family: 'Roboto Slab', serif
+      // font-family: 'Poiret One', cursive
+      font-family: 'Rokkitt', serif
+      font-family: 'Exo', sans-serif
+
+    .link:hover
+      color: $secondary-color
+      // color: #fae596
+      text-decoration: underline
+
+    .link.selected
+      font-weight: bold
+      color: $warn-color
+
+section.banner
+  background-color: $accent-color
+  background-image: url('assets/images/tiles.png')
+  color: white
+  height: 480px
+
+  .main-catch
+    box-shadow: 3px 3px 10px #999
+    max-height: 400px
+    margin-top: 40px
+    margin-left: 70px
+    border: 2px solid white
+    border-radius: 5px
+
+  .main
+    margin-top: 100px
+
+  .slogan
+
+  .info
+
+section.catch
+  padding-top: 20px
+  padding-bottom: 50px
+
+  h2
+    margin-bottom: 40px
+
+  .snippit
+    padding-top: 20px
+    line-height: 30px
+    font-size: 20px
+
+    .left
+      padding-left: 40px
+      padding-right: 20px
+
+  hr
+    border-bottom: 1px solid $subtle-color
+
+  .box
+    display: inline-block
+    width: 300px
+    height: 300px
+    text-align: center
+    box-shadow: 5px 5px 10px $subtle-color
+
+  .catch1
+    background-color: $secondary-color
+
+  .catch2
+    background-color: $warn-color
+
+  .catch3
+    background-color: $accent-color
+
+  .box i
+    margin-top: 50px
+    font-size: 200px
+    color: $primary-color
+
+section.team
+  color: white
+  background-color: $secondary-color
+  padding-bottom: 80px
+  background-image: url('assets/images/shattered_blue.png')
+
+  .member + .member
+    margin-top: 100px
+
+  .member
+    padding-bottom: 20px
+
+  .icons
+    padding-left: 50px
+    padding-top: 28px
+
+  i
+    display: block
+    cursor: pointer
+    font-size: 40px
+    color: white
+
+  i:hover
+    color: $warn-color
+
+  i + i
+    margin-top: 15px
+
+  h1
+    color: white
+    text-shadow: 1px 1px $subtle-color
+
+  h2
+    margin-top: 40px
+    margin-bottom: 20px
+
+
+  .portrait
+    display: inline-block
+    border-radius: 50%
+    border: 2px solid white
+    width: 300px
+    height: 300px
+    margin-top: 30px
+
+  .guillermo
+    background-image: url('assets/images/gmo.jpg')
+    background-position: -50px -40px
+    background-size: 560px 400px
+
+  .cody
+    background-image: url('assets/images/cody4.jpg')
+    background-position: -400px 0px
+    background-size: 400px 400px
+
+  .payden
+    background-image: url('assets/images/payden.jpg')
+    background-position: -60px 0px
+
+  .biography
+
+section.portfolio
+  color: white
+  background-color: $warn-color
+  height: 620px
+  font-size: 20px
+
+  h1, h2, h3, h4, h5
+    color: #555
+
+  .link
+    font-size: 30px
+    margin-top: 16px
+    padding-right: 20px
+    cursor: pointer
+
+  .link:hover
+    color: $secondary-color
+
+  .title
+    margin-top: 50px
+    margin-bottom: 20px
+    color: white
+
+  .name
+    margin-bottom: 30px
+
+  .about
+    font-size: 20px
+
+  img
+    margin-top: 80px
+    width: 100%
+    border: 2px solid white
+    border-radius: 10px
+
+section.contact
+  height: 800px
+  background-color: white
+
+  h2
+    color: $warn-color
+
+  hr
+    border-bottom: 1px solid $subtle-color
+
+  input
+    width: 100%
+
+  form
+    label
+      font-size: 30px
+      color: $secondary-color
+
+    input
+      font-size: 20px
+      height: 50px
+
+    textarea
+      height: 300px
+      font-size: 20px
+
+    .actions
+      text-align: right
+
+      button
+        padding: 10px
+        width: 100%
+        font-size: 24px
+        color: white
+        background-color: $secondary-color
+        border: 1px solid $secondary-color
+
+      button:hover
+        background-color: $accent-color
+
+section.footer
+  height: 100px
+  padding-top: 10px
+  background-color: $subtle-color
+
+  h2
+    font-family: 'Poiret One', cursive

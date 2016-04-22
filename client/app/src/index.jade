@@ -1,0 +1,27 @@
+
+html
+  head
+  
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css")
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Abel|Karla|Monda', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300|Shadows+Into+Light|Coming+Soon|Shadows+Into+Light+Two|Crafty+Girls|Alegreya+Sans+SC:400,300', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100|Poiret+One|Rokkitt:400,700|Exo:400,700|Cinzel:400,700', type='text/css')
+    link(rel='stylesheet', href='app.css')
+    script(src='app.js')
+    script(src='templates.js')
+    
+  body(
+    ng-app='seibertsoftwaresolutions'
+  )
+    //- #fb-root
+    div(ui-view="main")
+    
+  //- script.
+  //-   (function(d, s, id) {
+  //-   var js, fjs = d.getElementsByTagName(s)[0];
+  //-   if (d.getElementById(id)) return;
+  //-   js = d.createElement(s); js.id = id;
+  //-   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=960453240736059";
+  //-   fjs.parentNode.insertBefore(js, fjs);
+  //-   }(document, 'script', 'facebook-jssdk'));
