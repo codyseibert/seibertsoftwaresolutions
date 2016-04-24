@@ -22,8 +22,8 @@ gulp.task 'copy', ['jade'], ->
     .pipe gulp.dest('dist')
     .pipe connect.reload()
 
-  gulp.src('app/assets/images/*')
-    .pipe gulp.dest('dist/assets/images')
+  gulp.src('app/assets/**/*')
+    .pipe gulp.dest('dist/assets')
 
 gulp.task 'jade', ->
   gulp.src 'app/src/**/*.jade'

@@ -1,27 +1,6 @@
 class seibertsoftwaresolutions::profile::ui (
 ) {
 
-  yumrepo { 'codyseibert':
-    name => 'codyseibert',
-    descr => 'codyseibert',
-    gpgcheck => 0,
-    enabled => 1,
-    mirrorlist => absent,
-    repo_gpgcheck => 0,
-    baseurl => 'http://104.131.253.44/repo',
-    ensure => present,
-    http_caching => 'none',
-    metadata_expire => 1
-  }
-
-  if defined (Firewall['100 allow http and https access']) == false {
-    firewall { '100 allow http and https access':
-      dport   => [80, 443],
-      proto  => tcp,
-      action => accept,
-    }
-  }
-
   if defined(Class['apache']) == false {
     class { 'apache':
       default_vhost => false,
@@ -30,10 +9,28 @@ class seibertsoftwaresolutions::profile::ui (
   }
 
   include apache::mod::dir
+  include apache::mod::headers
+  include apache::mod::filter
+  include apache::mod::proxy
+  include apache::mod::proxy_http
+  include apache::mod::deflate
+  include apache::mod::php
 
-  if defined (Apache::Vhost['seibertsoftwaresolutions.codyseibert.com']) == false {
-    apache::vhost { 'seibertsoftwaresolutions.codyseibert.com':
-      docroot => '/var/www/html/seibertsoftwaresolutions-ui',
+  $filters = [
+    'FilterDeclare   COMPRESS',
+    "FilterProvider  COMPRESS DEFLATE \"%{Content_Type} = 'text/html'\"",
+    "FilterProvider  COMPRESS DEFLATE \"%{Content_Type} = 'text/css'\"",
+    "FilterProvider  COMPRESS DEFLATE \"%{Content_Type} = 'text/plain'\"",
+    "FilterProvider  COMPRESS DEFLATE \"%{Content_Type} = 'application/json'\"",
+    "FilterProvider  COMPRESS DEFLATE \"%{Content_Type} = 'application/javascript'\"",
+    "FilterProvider  COMPRESS DEFLATE \"%{Content_Type} = 'image/svg+xml'\"",
+    'FilterChain     COMPRESS',
+    'FilterProtocol  COMPRESS DEFLATE change=yes;byteranges=no',
+  ]
+
+  if defined (Apache::Vhost['seibertsoftwaresolutions.com']) == false {
+    apache::vhost { 'seibertsoftwaresolutions.com':
+      docroot => '/var/www/html/seibertsoftwaresolutions',
       vhost_name => '*',
       port => 80,
       directoryindex => 'index.html',
@@ -48,10 +45,11 @@ class seibertsoftwaresolutions::profile::ui (
     }
   }
 
-  if defined (Package['seibertsoftwaresolutions-ui']) == false {
-    package { 'seibertsoftwaresolutions-ui':
-      ensure => 'latest',
-      provider => 'yum',
+  if defined(Selboolean['httpd_can_network_connect']) == false {
+    selboolean { 'httpd_can_network_connect':
+      persistent => true,
+      value      => 'on',
     }
   }
+
 }

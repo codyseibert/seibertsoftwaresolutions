@@ -255,7 +255,7 @@ section.contact#contact
         h3 Feel free to send us an email at
         br
         br
-        h3.mail cseibert113@gmail.com
+        h3.mail cseibert@seibertsoftwaresolutions.com
         br
         br
         h3 or
@@ -265,11 +265,14 @@ section.contact#contact
         br
         br
         
-        form.left.col-md-8.col-md-push-2
+        form.left.col-md-8.col-md-push-2(
+          ng-submit="submit()"
+        )
           .row
             .form-group.col-md-6
               label First Name
               input.form-control(
+                ng-model="form.firstname"
                 type="text"
                 placeholder="First Name"
               )
@@ -277,6 +280,7 @@ section.contact#contact
             .form-group.col-md-6
               label Last Name
               input.form-control(
+                ng-model="form.lastname"
                 type="text"
                 placeholder="Last Name"
               )
@@ -284,6 +288,7 @@ section.contact#contact
             .form-group.col-md-12
               label Email
               input.form-control(
+                ng-model="form.email"
                 type="email"
                 placeholder="Email"
               )
@@ -292,6 +297,7 @@ section.contact#contact
             .form-group.col-md-12
               label Message
               textarea.form-control(
+                ng-model="form.message"
                 placeholder="message"
               )
           
