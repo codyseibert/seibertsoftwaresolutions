@@ -1,0 +1,120 @@
+<link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/codemirror.min.css' rel='stylesheet' type='text/css'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.css' rel='stylesheet' type='text/css'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/theme/monokai.css' rel='stylesheet' type='text/css'>
+
+<style>
+  body {
+    height: 100%;
+    font-family: 'Poiret One', cursive;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Alfa Slab One', cursive;
+    background-color: #89BDD3;
+    color: #89bdd3;
+  }
+
+  #wrapper {
+    width: 100%;
+    padding-top: 140px;
+  }
+
+  #myTextArea {
+    width: 100%;
+    height: 100%;
+  }
+
+  .CodeMirror {
+    height: 80%;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+
+  #course {
+    font-size: 24px;
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: black;
+    font-family: 'Alfa Slab One', cursive;
+  }
+
+  #title {
+    font-size: 30px;
+    display: inline-block;
+    position: absolute;
+    top: 90px;
+    left: 25px;
+    font-family: 'Alfa Slab One', cursive;
+    color: white;
+  }
+
+  #footer {
+    font-size: 24px;
+    display: inline-block;
+    position: absolute;
+    bottom: 18px;
+    right: 25px;
+    z-index: 1;
+    font-family: 'Poiret One', cursive;
+  }
+
+  #run {
+    font-size: 24px;
+    display: inline-block;
+    position: absolute;
+    top: 75px;
+    right: 25px;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    font-family: 'Josefin Slab', serif;
+  }
+
+  #run:hover {
+    background-color: #FF9F62;
+  }
+
+</style>
+
+<html>
+  <body>
+
+    <div id="course">A Complete Beginners Guide<br>To Programming in Javascript</div>
+    <div id="title">Section 1: The Introduction</div>
+    <div id="footer">Seibert Software Solutions, LLC</div>
+    <div id="run">
+      <i class="fa fa-play"></i> RUN
+    </div>
+
+    <div id="wrapper">
+      <textarea id="myTextArea"></textarea>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/mode/javascript/javascript.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One|Dosis|Josefin+Slab|Alfa+Slab+One' rel='stylesheet' type='text/css'>
+
+    <script>
+
+      var editor = CodeMirror.fromTextArea($('#myTextArea')[0], {
+        lineNumbers: true,
+        theme: 'monokai',
+        mode:  "javascript"
+      });
+
+      $('#run').click(function(){
+        eval(editor.getValue());
+      });
+
+    </script>
+
+  </body>
+</html>
