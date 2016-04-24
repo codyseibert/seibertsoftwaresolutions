@@ -15,7 +15,7 @@ mod 'jenkins',
   :ref => 'master'
 
 mod 'seibertsoftwaresolutions',
-  :git => 'https://github.com/codyseibert/seibertsoftwaresolutions.git',
+  :git => 'git@github.com:codyseibert/seibertsoftwaresolutions.git',
   :ref => 'master'
 
 mod 'mysql',
