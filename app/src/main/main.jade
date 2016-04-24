@@ -265,8 +265,18 @@ section.contact#contact
         br
         br
         
+        h3(
+          style="color: red"  
+          ng-if="success === false"
+        ) There was an issue submitting your message, please email me directly
+        
+        h3(
+          ng-if="success === true"
+        ) Thank you for your message!
+        
         form.left.col-md-8.col-md-push-2(
           ng-submit="submit()"
+          ng-if="success === null"
         )
           .row
             .form-group.col-md-6

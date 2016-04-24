@@ -9,13 +9,16 @@ module.exports = [
   ) ->
 
     $scope.form = {}
+    $scope.success = null
 
     $scope.submit = ->
       $http.post 'mailer', $scope.form
         .then (result) ->
-          console.log result
+          $scope.success = true
+          $scope.form = {}
         .catch (err) ->
-          console.log err
+          $scope.success = false
+          $scope.form = {}
 
     return this
 ]
