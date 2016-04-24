@@ -14,10 +14,6 @@ mod 'jenkins',
   :git => 'https://github.com/jenkinsci/puppet-jenkins.git',
   :ref => 'master'
 
-mod 'seibertsoftwaresolutions',
-  :git => 'git@github.com:codyseibert/seibertsoftwaresolutions.git',
-  :ref => 'master'
-
 mod 'mysql',
   :git => 'https://github.com/puppetlabs/puppetlabs-mysql.git',
   :ref => 'master'
