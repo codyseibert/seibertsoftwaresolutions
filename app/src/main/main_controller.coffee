@@ -11,7 +11,7 @@ module.exports = [
     $scope.form = {}
 
     $scope.submit = ->
-      $http.post 'assets/php/email.php', $scope.form
+      $http.post 'mailer', $scope.form
         .then (result) ->
           console.log result
         .catch (err) ->
