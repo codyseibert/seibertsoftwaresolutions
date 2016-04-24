@@ -1,4 +1,4 @@
-class seibertsoftwaresolutions::profile::ui (
+class seibertsoftwaresolutions::profile::httpd (
 ) {
 
   if defined(Class['apache']) == false {
