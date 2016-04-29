@@ -1,0 +1,711 @@
+<style>
+  body {
+    font-family: 'Poiret One', cursive;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Alfa Slab One', cursive;
+    background-color: #fff;
+    color: #89bdd3;
+  }
+
+  div {
+    position: absolute;
+  }
+
+  .code {
+    font-family: 'Ubuntu Mono' !important;
+  }
+
+  #apple {
+    opacity: 0;
+    top: -100px;
+    left: 2000px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: absolute;
+    background-image: url('images/apple.svg');
+    background-size: cover;
+  }
+
+  #watch {
+    opacity: 0;
+    top: -100px;
+    left: 500px;
+    width: 115px;
+    height: 145px;
+    display: inline-block;
+    position: absolute;
+    background-image: url('images/watch.svg');
+    background-size: cover;
+  }
+
+  #water {
+    opacity: 0;
+    top: -100px;
+    left: 500px;
+    width: 70px;
+    height: 150px;
+    display: inline-block;
+    position: absolute;
+    background-image: url('images/water.svg');
+    background-size: cover;
+  }
+
+  #box {
+    width: 0px;
+    height: 0px;
+    display: inline-block;
+    position: absolute;
+    background-image: url('images/box.png');
+    background-size: cover;
+  }
+
+  #box-top {
+    width: 0px;
+    height: 0px;
+    display: inline-block;
+    position: absolute;
+    background-image: url('images/box_top.png');
+    background-size: cover;
+    z-index: 1;
+    left: 748px;
+    top: 228px;
+    opacity: 0;
+    width: 276px;
+    height: 200px;
+  }
+
+  #title {
+    font-size: 50px;
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+  }
+
+  #course {
+    font-size: 24px;
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: black;
+  }
+
+  #overview {
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+  }
+
+  #overview li {
+    font-size: 40px;
+    font-family: 'Dosis', sans-serif;
+    line-height: 70px;
+    white-space: nowrap;
+  }
+
+  #footer {
+    position: fixed;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Poiret One', cursive;
+    right: 25px;
+    bottom: 25px;
+  }
+
+  #mouse {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+  }
+
+  #label {
+    position: absolute;
+    left: 600px;
+    top: 1000px;
+    font-size: 100px;
+    z-index: 2;
+    color: black;
+  }
+
+  #numbers {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  #numbers .number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+  }
+
+  .orange {
+    color: #FF9F62;
+  }
+
+  .green {
+    color: green;
+  }
+
+  #numbers .number.orange {
+    width: 600px;
+  }
+
+  #numbers .number.green {
+    width: 600px;
+  }
+
+  #numbers .number span{
+    opacity: 0;
+  }
+
+  #combined {
+    opacity: 0;
+    width: 700px;
+    font-size: 70px;
+  }
+
+  #math {
+    font-size: 70px;
+    left: 630;
+    top: 350;
+    position: absolute;
+    opacity: 0;
+  }
+
+  #math .operator{
+    color: red;
+  }
+
+  #declare-number {
+    font-size: 70px;
+    left: 630;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    color: black;
+  }
+
+  #booleans {
+    width: 500px;
+    position: absolute;
+    left: 730px;
+    top: 250px;
+    color: #89bdd3;
+    opacity: 0;
+  }
+
+  .boolean {
+    font-size: 70px;
+  }
+
+  #bubbles {
+    width: 500px;
+    position: absolute;
+    left: 780px;
+    top: 150px;
+    opacity: 0;
+  }
+
+  .bubble {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #89bdd3;
+    opacity: 1;
+  }
+
+  #bubble1 {
+    top: 50px;
+  }
+
+  #bubble2 {
+    top: 200px;
+  }
+
+  #bubble3 {
+    top: 350px;
+  }
+
+  .line {
+    left: 45px;
+    height: 50px;
+    border-left: 10px solid #89bdd3;
+    opacity: 1;
+  }
+
+  #line1 {
+    top: 0px;
+  }
+
+  #line2 {
+    top: 150px;
+  }
+
+  #line3 {
+    top: 300px;
+  }
+
+  #line4 {
+    top: 450px;
+  }
+
+  #string {
+    opacity: 0;
+    font-size: 50px;
+    left: 600px;
+    top: 330px;
+  }
+
+  #string span {
+    position: relative;
+    color: black;
+  }
+
+  #form {
+    background-image: url('images/form2.png');
+    background-size: cover;
+    width: 480px;
+    height: 150px;
+    left: 600px;
+    top: 125px;
+    opacity: 0;
+  }
+
+  #line-firstname {
+    left: 610px;
+    top: 300px;
+    color: black;
+    opacity: 0;
+  }
+
+  #line-lastname {
+    left: 610px;
+    top: 365px;
+    color: black;
+    opacity: 0;
+  }
+
+  #line-email {
+    left: 610px;
+    top: 430px;
+    color: black;
+    opacity: 0;
+  }
+
+  #line-fullname {
+    left: 610px;
+    top: 495px;
+    color: black;
+    opacity: 0;
+  }
+
+  #firstname {
+    color: #89bdd3;
+  }
+
+  #lastname {
+    color: #89bdd3;
+  }
+
+  #email {
+    color: #89bdd3;
+  }
+
+  #fullname {
+    color: #89bdd3;
+  }
+
+
+  #firstname span {
+    position: relative;
+  }
+
+  #lastname span {
+    position: relative;
+  }
+
+  #email span {
+    position: relative;
+  }
+
+  #fullname span {
+    position: relative;
+  }
+
+  .big {
+    font-size: 30px;
+  }
+
+  #null {
+    position: absolute;
+    left: 550px;
+    top: -100px;
+    color: black;
+    width: 500px;
+  }
+
+  #null p {
+    position: absolute;
+    top: 60px;
+    font-size: 30px;
+    opacity: 0;
+  }
+
+  #line-undefined {
+    position: absolute;
+    left: 620px;
+    top: 300px;
+    opacity: 0;
+    font-size: 30px;
+    color: black;
+  }
+
+  #default {
+    position: absolute;
+    left: 620px;
+    top: 350px;
+    width: 300px;
+    opacity: 0;
+    font-size: 30px;
+  }
+
+</style>
+
+<html>
+  <body>
+
+    <div id="mouse"></div>
+    <div id="box"></div>
+    <div id="box-top"></div>
+    <div id="course">A Complete Beginners Guide To Programming in Javascript</div>
+    <div id="title">Section 4: Types</div>
+    <ul id="overview">
+      <li id="a">Number</li>
+      <li id="b">Boolean</li>
+      <li id="c">String</li>
+      <li id="d">Undefined</li>
+      <li id="e">Null</li>
+    </ul>
+
+    <div id="numbers">
+      <div class="number">61</div>
+      <div class="number">19.294</div>
+      <div class="number">99</div>
+      <div class="number">93</div>
+      <div class="number">24.512345</div>
+      <div class="number">53</div>
+      <div class="number">4.41231</div>
+      <div class="number orange">24 <span>(Integer)</span> </div>
+      <div class="number">18</div>
+      <div class="number">1</div>
+      <div class="number">53</div>
+      <div class="number green">83.844 <span>(Float)</span></div>
+      <div class="number">24</div>
+      <div class="number">73.52342</div>
+      <div class="number">44</div>
+    </div>
+    <div id="combined" class="number"><span class="orange">24</span>.<span class="green">844</span> (Number)</div>
+    <div id="math">
+      <span class="left">54</span>
+      <span class="operator">+</span>
+      <span class="right">23</span>
+    </div>
+    <div id="declare-number" class="code">
+      var x = <span class="math">54 + 23</span>;
+    </div>
+    <div id="booleans">
+      <span id="true" class="boolean">TRUE</span>
+      <br>
+      <span id="false" class="boolean orange">FALSE</span>
+    </div>
+    <div id="bubbles">
+      <div id="line1" class="flow line"></div>
+      <div id="bubble1" class="flow bubble"></div>
+      <div id="line2" class="flow line"></div>
+      <div id="bubble2" class="flow bubble"></div>
+      <div id="line3" class="flow line"></div>
+      <div id="bubble3" class="flow bubble"></div>
+      <div id="line4" class="flow line"></div>
+    </div>
+
+    <div id="line-undefined" class="big code">var firstname;</div>
+    <p id="default">
+      By default, variables declared without a value are undefined
+    </p>
+
+    <div id="form"></div>
+    <div id="line-firstname" class="big code">var firstname = <span id="firstname">"Bob";</span></div>
+    <div id="line-lastname" class="big code">var lastname = <span id="lastname">"Ross";</span></div>
+    <div id="line-email" class="big code">var email = <span id="email">"bobross@gmail.com";</span></div>
+    <div id="line-fullname" class="big code">var fullName = <span id="fullname">firstname + " " + lastname;</span></div>
+
+    <div id="null">
+      <div class="big code">var firstname = <span class="orange">"Bob"</span>;</div>
+      <p>
+        null can be used for programmically setting a variable to have a value of 'no value'.
+      </p>
+    </div>
+
+    <div id="footer">Seibert Software Solutions, LLC</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenMax.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono|Fira+Mono' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One|Dosis|Josefin+Slab|Alfa+Slab+One' rel='stylesheet' type='text/css'>
+
+    <script>
+
+      $('#numbers .number').each(function() {
+        $(this).css({left: 500 + parseInt(Math.random()*700), top: -100});
+      });
+
+      $(document).on('mousemove', function(e) {
+        $('#mouse').html(e.clientX + ' ' + e.clientY);
+      });
+
+      var $title = $('#title');
+      $title.html($title.html().replace(/(.)/g, "<span>$1</span>").replace(/\s/g, " "));
+
+      var $firstname = $('#firstname');
+      $firstname.html($firstname.html().replace(/(.)/g, "<span>$1</span>").replace(/\s/g, " "));
+
+      var $lastname = $('#lastname');
+      $lastname.html($lastname.html().replace(/(.)/g, "<span>$1</span>").replace(/\s/g, " "));
+
+      var $email = $('#email');
+      $email.html($email.html().replace(/(.)/g, "<span>$1</span>").replace(/\s/g, " "));
+
+      var $fullname = $('#fullname');
+      $fullname.html($fullname.html().replace(/(.)/g, "<span>$1</span>").replace(/\s/g, " "));
+
+      var $course = $('#course');
+      $course.html($course.html().replace(/(.)/g, "<span>$1</span>").replace(/\s/g, " "));
+      $course.html($course.html().replace(/T/g, "<br><span>T</span>"));
+
+      var BOX_X_END = 740;
+      var BOX_Y_END = 220;
+
+      var tl = new TimelineLite();
+      tl
+        // setup the course position
+        .to('#course', 0, {x: 380, y: 260, autoAlpha: 1}, '+=3')
+        // fade in the characters
+        .staggerFromTo($course.find("span"), 0.1, {autoAlpha:0}, {autoAlpha:1}, 0.04)
+        // setup the title position
+        .to('#title', 0, {x: 370, y: 330, autoAlpha: 1})
+        // fade in the characters
+        .staggerFromTo($title.find("span"), 0.9, {autoAlpha:0}, {autoAlpha:1}, 0.1, '+=1')
+        // hide the course
+        .to('#course', 1, {autoAlpha: 0}, '+=1')//{x: 380, y: 25, ease: Power4.easeOut}, '+=1')
+        // move the title up
+        .to('#title', 1, {x: 366, y: 25, ease: Power4.easeOut}, '-=1')
+        // setup the overview
+        .to('#overview', 0, {autoAlpha: 1, x: 420, y: 90}, '+=1')
+        // fade in the list items
+        .staggerFromTo('#overview li', 1, {autoAlpha:0}, {autoAlpha:1}, 1.5)
+        // bold and colorize list item A
+        .to('#overview #a', 1, {'font-weight': 'bold', 'color': '#FF9F62'}, '+=1')
+        // move the title left
+        .to('#title', 1, {x: 25, y: 105, 'font-size': '30px', ease: Power4.easeOut}, '+=1')
+        // move the overview left
+        .to('#overview', 1, {x: 25, y: 130}, '-=1')
+        .to('#overview li', 1, {'font-size': '28px'}, '-=1')
+        // set the course to top left
+        .to('#course', 0, {x: 35, y: 25}, '-=1')
+        // fade in the course
+        .to('#course', 1, {autoAlpha: 1}, '-=1')
+
+        .staggerTo('#numbers .number', 13, {top: 820, autoAlpha: 0}, 0.4)
+
+        .to('.number.orange', 1, {left: 630, top: 300, autoAlpha: 1, 'font-size': '70px'}, '-=11')
+        .to('.number.green', 1, {left: 630, top: 400, autoAlpha: 1, 'font-size': '70px'}, '-=8')
+        .to('.number.orange span', 1, {autoAlpha: 1})
+        .to('.number.green span', 1, {autoAlpha: 1}, '+=5')
+
+        .to('.number.orange', 1, {left: 630, top: 350, autoAlpha: 0}, '+=5')
+        .to('.number.green', 1, {left: 630, top: 350, autoAlpha: 0}, '-=1')
+        .to('#combined', 0.0, {left: 630, top: 350}, '-=0.7')
+        .to('#combined', 0.5, {autoAlpha: 1}, '-=0.5')
+        .to('#combined', 0.5, {autoAlpha: 0}, '+=5')
+
+        .to('#math', 3.0, {autoAlpha: 1}, '+=1')
+        .to('#math .operator', 1.0, {autoAlpha: 0}, '+=1')
+        .call(function() {
+          $('.operator').html('-')
+        }, null, null)
+        .to('#math .operator', 1.0, {autoAlpha: 1})
+        .to('#math .operator', 1.0, {autoAlpha: 0}, '+=1')
+        .call(function() {
+          $('.operator').html('*')
+        }, null, null)
+        .to('#math .operator', 1.0, {autoAlpha: 1})
+        .to('#math .operator', 1.0, {autoAlpha: 0}, '+=1')
+        .call(function() {
+          $('.operator').html('/')
+        }, null, null)
+        .to('#math .operator', 1.0, {autoAlpha: 1})
+
+        .to('#declare-number', 1.0, {top: 350, autoAlpha: 1, ease:Bounce.easeOut}, '+=3')
+        .to('#math', 1.0, {top: 850, autoAlpha: 1, ease: Power4.easeIn}, '-=0.95')
+
+
+        .to('#declare-number .math', 0.5, {autoAlpha: 0}, '+=5')
+        .call(function(){
+          $('#declare-number .math').html('77')
+        })
+        .to('#declare-number .math', 0.5, {autoAlpha: 1})
+
+        .to('#declare-number .math', 0.5, {autoAlpha: 0}, '+=5')
+        .call(function(){
+          $('#declare-number .math').html('1 / 0')
+        })
+        .to('#declare-number .math', 0.5, {autoAlpha: 1})
+
+        .to('#declare-number .math', 0.5, {autoAlpha: 0}, '+=5')
+        .call(function(){
+          $('#declare-number .math').html('"NaN"')
+        })
+        .to('#declare-number .math', 0.5, {autoAlpha: 1})
+        .to('#declare-number', 1.0, {top: 850, autoAlpha: 0, ease: Power4.easeIn}, '+=5')
+
+        .to('#overview #a', 1, {'font-weight': 'normal', 'color': '#89bdd3'}, '+=1')
+        .to('#overview #b', 1, {'font-weight': 'bold', 'color': '#FF9F62'}, '-=1')
+
+        .to('#booleans', 0, {autoAlpha: 1})
+        .staggerFrom('.boolean', 1, {'font-size': '0px', ease: Elastic.easeOut}, 1, '+=2')
+        .to('#booleans', 2.0, {autoAlpha: 0}, '+=3')
+
+        .to('#bubbles', 0, {autoAlpha: 1}, '+=1')
+        .from('#line1', 0.5, {height: 0, autoAlpha: 1, ease: Elastic.easeOut}, '-=0.2')
+        .from('#bubble1', 0.5, {width: 0, height: 0, autoAlpha: 1, ease: Elastic.easeOut}, '-=0.2')
+        .from('#line2', 0.5, {height: 0, autoAlpha: 1, ease: Elastic.easeOut}, '-=0.2')
+        .from('#bubble2', 0.5, {width: 0, height: 0, autoAlpha: 1, ease: Elastic.easeOut}, '-=0.2')
+        .from('#line3', 0.5, {height: 0, autoAlpha: 1, ease: Elastic.easeOut}, '-=0.2')
+        .from('#bubble3', 0.5, {width: 0, height: 0, autoAlpha: 1, ease: Elastic.easeOut}, '-=0.2')
+        .from('#line4', 0.5, {height: 0, autoAlpha: 1, ease: Elastic.easeOut}, '-=0.2')
+
+        .to('#line1', 0.5, {'border-color': 'green'}, '+=2')
+        .to('#bubble1', 0.5, {'background-color': 'green'}, '-=0.3')
+        .to('#line2', 0.5, {'border-color': 'green'}, '-=0.3')
+        .to('#bubble2', 0.5, {'background-color': 'green'}, '-=0.3')
+        .to('#line3', 0.5, {'border-color': 'green'}, '-=0.3')
+        .to('#bubble3', 0.5, {'background-color': 'green'}, '-=0.3')
+        .to('#line4', 0.5, {'border-color': 'green'}, '-=0.3')
+
+        .to('#booleans', 1.0, {autoAlpha: 1}, '+=1')
+        .to('#true', 1.0, {position: 'absolute', left: -280, top: 100}, '-=1')
+        .to('#false', 1.0, {position: 'absolute', left: 280, top: 100}, '-=1')
+
+        .to('#line1', 0.5, {top: -10, 'border-color': '#89bdd3'}, '+=2')
+        .to('#bubble1', 0.5, {'background-color': '#89bdd3'})
+        .to('#line2', 0.3, {'rotation': '+=45', left: 0, top: 150, 'border-color': '#89bdd3', ease: Power4.easeOut})
+        .to('#line3', 0.3, {'rotation': '-=45', left: 80, top: 150, 'border-color': '#89bdd3', ease: Power4.easeOut})
+        .to('#bubble2', 0.3, {left: -100, 'background-color': '#89bdd3', ease: Power4.easeOut})
+        .to('#bubble3', 0.3, {left: 100, top: 200, 'background-color': '#89bdd3', ease: Power4.easeOut})
+        .to('#line4', 0.3, {autoAlpha: 0, 'border-color': '#89bdd3', ease: Power4.easeOut})
+
+        .to('#line1', 0.5, {'border-color': 'green'}, '+=2')
+        .to('#bubble1', 0.5, {'background-color': 'green'}, '-=0.3')
+        .to('#line2', 0.5, {'border-color': 'green'}, '-=0.3')
+        .to('#bubble2', 0.5, {'background-color': 'green'}, '-=0.3')
+
+        .to('#line1', 0.5, {'border-color': '#89bdd3'}, '+=2')
+        .to('#bubble1', 0.5, {'background-color': '#89bdd3'}, '-=0.3')
+        .to('#line2', 0.5, {'border-color': '#89bdd3'}, '-=0.3')
+        .to('#bubble2', 0.5, {'background-color': '#89bdd3'}, '-=0.3')
+
+        .to('#line1', 0.5, {'border-color': 'green'}, '+=2')
+        .to('#bubble1', 0.5, {'background-color': 'green'}, '-=0.3')
+        .to('#line3', 0.5, {'border-color': 'green'}, '-=0.3')
+        .to('#bubble3', 0.5, {'background-color': 'green'}, '-=0.3')
+
+        .to('#booleans', 1.0, {autoAlpha: 0}, '+=2')
+        .to('#bubbles', 1.0, {autoAlpha: 0}, '-=2')
+
+        .call(function(){
+          $('#declare-number .math').html('true')
+        })
+        .to('#declare-number', 1.0, {top: 350, autoAlpha: 1, ease:Bounce.easeOut})
+        .to('#declare-number .math', 1.0, {autoAlpha: 1}, '-=1')
+
+        .to('#declare-number .math', 0.5, {autoAlpha: 0}, '+=2')
+        .call(function(){
+          $('#declare-number .math').html('false')
+        })
+        .to('#declare-number .math', 0.5, {autoAlpha: 1})
+        .to('#declare-number', 1.0, {top: -100, autoAlpha: 0, ease: Power4.easeIn}, '+=2')
+
+        .to('#overview #b', 1, {'font-weight': 'normal', 'color': '#89bdd3'}, '+=1')
+        .to('#overview #c', 1, {'font-weight': 'bold', 'color': '#FF9F62'}, '-=1')
+
+        .to('#line-undefined', 1.0, {autoAlpha: 1}, '+=2')
+        .to('#default', 1.0, {autoAlpha: 1}, '+=2')
+        .to('#line-undefined', 1.0, {autoAlpha: 0}, '+=7')
+        .to('#default', 1.0, {autoAlpha: 0}, '-=1')
+
+        .to('#form', 2.0, {autoAlpha: 1})
+        .from('#form', 2.0, {top: 900, ease: Bounce.easeOut}, '-=2.0')
+        .to('#line-firstname', 1, {autoAlpha: 1}, '+=7')
+        .to('#line-lastname', 1, {autoAlpha: 1}, '+=1')
+        .to('#line-email', 1, {autoAlpha: 1}, '+=1')
+        .staggerFrom('#firstname span', 0.5, {autoAlpha: true, left: 900, ease: Linear.easeIn}, 0.2, '+=12')
+        .staggerFrom('#lastname span', 0.5, {autoAlpha: true, left: 900, ease: Linear.easeIn}, 0.2, '+=2')
+        .staggerFrom('#email span', 0.5, {autoAlpha: true, left: 900, ease: Linear.easeIn}, 0.2, '+=2')
+
+        .to('#line-fullname', 1, {autoAlpha: 1}, '+=7')
+        .staggerFrom('#fullname span', 0.5, {autoAlpha: true, left: 900, ease: Linear.easeIn}, 0.2, '+=2')
+        .to('#fullname', 0.5, {autoAlpha: 0}, '+=5')
+        .call(function(){
+          $('#fullname').html('"Bob Ross"')
+        })
+        .to('#fullname', 0.5, {autoAlpha: 1})
+        .to('#form', 1.0, {autoAlpha: 0}, '+=5')
+        .to('#line-firstname', 1.0, {autoAlpha: 0}, '-=1')
+        .to('#line-lastname', 1.0, {autoAlpha: 0}, '-=1')
+        .to('#line-email', 1.0, {autoAlpha: 0}, '-=1')
+        .to('#line-fullname', 1.0, {autoAlpha: 0}, '-=1')
+
+        .to('#overview #c', 1, {'font-weight': 'normal', 'color': '#89bdd3'}, '+=1')
+        .to('#overview #d', 1, {'font-weight': 'bold', 'color': '#FF9F62'}, '-=1')
+
+        .call(function() {
+          $('#form').css('background-image', 'url(images/form_empty.png')
+          $('#form').css('width', '500px')
+          $('#form').css('left', '590px')
+        })
+        .to('#form', 1.0, {autoAlpha: 1}, '+=5')
+
+        .to('#line-email', 1.0, {autoAlpha: 1}, '-=1')
+        .to('#email', 1.0, {autoAlpha: 0}, '+=5')
+        .call(function(){
+          $('#email').html('undefined')
+        })
+        .to('#email', 1.0, {autoAlpha: 1}, '+=5')
+
+        .to('#form', 1.0, {autoAlpha: 0}, '+=5')
+        .to('#email', 1.0, {autoAlpha: 0}, '-=1')
+        .to('#line-email', 1.0, {autoAlpha: 0}, '-=1')
+
+        .to('#overview #d', 1, {'font-weight': 'normal', 'color': '#89bdd3'}, '+=1')
+        .to('#overview #e', 1, {'font-weight': 'bold', 'color': '#FF9F62'}, '-=1')
+        .to('#null', 1, {autoAlpha: 1}, '+=1')
+        .to('#null', 1, {top: 260}, '+=1')
+        .to('#null .code span', 1, {autoAlpha: 0}, '+=2')
+        .call(function() {
+          $('#null .code span').html('null')
+        })
+        .to('#null .code span', 1, {autoAlpha: 1})
+        .to('#null p', 1, {autoAlpha: 1}, '+=2')
+
+        .to('#null', 1, {autoAlpha: 0}, '+=2')
+
+    </script>
+
+  </body>
+</html>

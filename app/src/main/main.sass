@@ -1,8 +1,9 @@
+
+
 h1
   font-size: 50px
   font-weight: bold
   text-shadow: 3px 3px $secondary-color
-
 
 section.header
   position: fixed
@@ -10,12 +11,36 @@ section.header
   height: 80px
   padding-top: 20px
   background-color: white
-  box-shadow: 1px 1px 5px $subtle-color
   color: $accent-color
   z-index: 10
+  border-bottom: 1px solid black
 
   .logo
-    font-size: 30px
+    font-size: 34px
+    left: 110px
+    top: -4px
+    position: absolute
+
+  .logo-wrapper
+    background-color: $subtle-color
+    background-color: $warn-color
+    border-right: 1px solid black
+    border-bottom: 1px solid black
+    width: 80px
+    height: 80px
+    top: -20px
+    position: absolute
+
+  .logo-img
+    background-image: url("assets/images/sss_logo.png")
+    background-size: cover
+    width: 50px
+    height: 50px
+    display: inline-block
+    position: absolute
+    left: 15px
+    top: 15px
+    -webkit-transform: rotate(120deg)
 
   .navigation
     text-align: right
@@ -260,3 +285,28 @@ section.footer
 
   h2
     font-family: 'Poiret One', cursive
+
+@media only screen and (max-width : 1100px)
+  section.header
+    .logo
+      padding-top: 4px
+      font-size: 30px
+
+@media only screen and (max-width : 768px)
+  section.header
+    .logo
+      font-size: 30px
+
+    .navigation
+      padding-top: 6px
+
+      .link
+        font-size: 18px
+
+@media only screen and (max-width : 510px)
+  section.header
+    .navigation
+      padding-top: 8px
+
+      .link
+        font-size: 14px

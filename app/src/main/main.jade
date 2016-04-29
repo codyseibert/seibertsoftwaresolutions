@@ -1,9 +1,11 @@
 
 section.header
-  .container
+  .container-fluid
     .row
       .col-md-6
-        span.logo Seibert Software Solutions, LLC
+        .logo-wrapper
+          .logo-img 
+        span.logo.hidden-sm.hidden-xs Seibert Software Solutions, LLC
       .col.md-6.navigation
         .link
           a(du-smooth-scroll="home") Home
@@ -13,7 +15,7 @@ section.header
           a(du-smooth-scroll="portfolio") Portfolio
         .link 
           a(du-smooth-scroll="contact") Contact
-        .link 
+        .link
           a(href="http://codyseibert.com", target="_blank") Blog
 
 section.banner#home
@@ -108,7 +110,7 @@ section.team#team
           a(href="http://flexion.us/", target="_blank") Flexion 
           | building a microservice architecture.  Additionally, he works on various projects outside of the 9-5.  He currently lives in Chattanooga, TN
       .col-md-2.icons
-        //- i.fa.fa-linkedin
+        a(href="https://www.linkedin.com/in/cody-seibert-659921109") i.fa.fa-linkedin
         //- i.fa.fa-home
         //- i.fa.fa-envelope
         //- i.fa.fa-facebook
@@ -134,28 +136,29 @@ section.team#team
       .col-md-4
         .portrait.payden
       .col-md-2.icons
+        a(href="https://www.linkedin.com/in/payden-seibert-b24b2813") i.fa.fa-linkedin
         //- i.fa.fa-linkedin
         //- i.fa.fa-home
         //- i.fa.fa-envelope
         //- i.fa.fa-facebook
         //- i.fa.fa-twitter
         
-    //- hr
-    //- 
-    //- .row.member
-    //-   .col-md-1
-    //-   .col-md-4
-    //-     .portrait.guillermo
-    //-   .col-md-5.biography
-    //-     h1 Guillermo Casanova
-    //-     h4 Guillermo is a designer by day, developer by night.  He was worked on designing a myraid of different things including posters, album art, web sites, brands, icons, logos, etc.  He has the artistic eye, and the technical ability to implement it. 
-    //-       br
-    //-       br
-    //-       | Guillermo currently works at 
-    //-       a(href="http://humanaut.is/", target="_blank") Humanaut, LLC 
-    //-       | as a full time designer and developer, and it living in Chattanooga, TN.
-    //-   .col-md-2.icons
-        //- i.fa.fa-linkedin
+    hr
+    
+    .row.member
+      .col-md-1
+      .col-md-4
+        .portrait.guillermo
+      .col-md-5.biography
+        h1 Guillermo Casanova
+        h4 Guillermo is a designer by day, developer by night.  He was worked on designing a myraid of different things including posters, album art, web sites, brands, icons, logos, etc.  He has the artistic eye, and the technical ability to implement it. 
+          br
+          br
+          | Guillermo currently works at 
+          a(href="http://humanaut.is/", target="_blank") Humanaut, LLC 
+          | as a full time designer and developer, and it living in Chattanooga, TN.
+      .col-md-2.icons
+        a(href="https://www.linkedin.com/in/guillermo-casanova-a824b6a0") i.fa.fa-linkedin
         //- i.fa.fa-home
         //- i.fa.fa-envelope
         //- i.fa.fa-facebook
@@ -252,23 +255,19 @@ section.contact#contact
       .col-md-12.center
         h2 Contact Us Now!
         hr.dark
-        h3 Feel free to send us an email at
         br
+        h3 Feel free to send us a message.  We look forward to helping you!
         br
-        h3.mail cseibert@seibertsoftwaresolutions.com
-        br
-        br
-        h3 or
-        br
-        br
-        h3 send us a message:
         br
         br
         
         h3(
           style="color: red"  
           ng-if="success === false"
-        ) There was an issue submitting your message, please email me directly
+        ) There was an issue submitting your message, please email me directly at 
+          br
+          br
+          | cseibert@seibertsoftwaresolutions.com
         
         h3(
           ng-if="success === true"
